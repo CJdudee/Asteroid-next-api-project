@@ -3,6 +3,7 @@ import getAsteroId from '@/lib/getAsteroid'
 import RockObject from '@/app/components/RockObject'
 import getAsteroidByDate from '@/lib/getAsteroidByDate'
 import flatDateArray from '@/lib/flatDateArray'
+import DateRockObject from '@/app/components/DateRockObject'
 
 type Params = {
     params: {
@@ -17,6 +18,8 @@ export default async function AsteroidPage({params: {start_date, end_date}}: Par
 
     //const numOfDays = end_date - start_date
     const asteroidByDate = await asteroidData
+
+    //console.log(asteroidByDate)
     
     const dateKeys = Object.keys(asteroidByDate.near_earth_objects)
 
@@ -25,18 +28,22 @@ export default async function AsteroidPage({params: {start_date, end_date}}: Par
     // })
 
     
-    const flatArray = flatDateArray(asteroidByDate)
+    const flatArray = flatDateArray(asteroidByDate.near_earth_objects)
 
     
 
     
-    console.log(flatArray)
-    console.log()
+    //console.log(flatArray.slice(0, 5))
+    // console.log(asteroidByDate.near_earth_objects)
   return (
     <>
     <div className=" p-4">
         <ul className="p-4">
-            {}
+            {flatArray.map((r: any) => {
+                return (
+                    <DateRockObject {...r} />
+                )
+            })}
             fix please
         </ul>
     </div>
