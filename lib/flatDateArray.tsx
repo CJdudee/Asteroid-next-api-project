@@ -15,3 +15,5 @@ export default function flatDateArray(asteroidBydate: any) {
     //console.log(merged)
     return merged
 }
+
+//advance function to turn a objects of arrays into just an array we can map over 

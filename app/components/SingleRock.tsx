@@ -3,11 +3,11 @@ import React from 'react'
 import { Url } from 'url'
 import CloseApproachData from './CloseApproachData'
 
-export default async function RockObject({rock, id, is_potentially_hazardous_asteroid, name_limited, nasa_jpl_url, close_approach_data, links, orbital_data, estimated_diameter }: {
+export default async function SingleRock({rock, id, is_potentially_hazardous_asteroid, name, nasa_jpl_url, close_approach_data, links, orbital_data, estimated_diameter }: {
     rock: object
     id: number
     is_potentially_hazardous_asteroid: boolean
-    name_limited: string
+    name: string
     nasa_jpl_url: string
     close_approach_data: any
     links: object
@@ -30,7 +30,7 @@ export default async function RockObject({rock, id, is_potentially_hazardous_ast
   return (
     <div className=' w-full text-center bg-purple-400 gap-4 text-lg p-8 rounded-xl border m-2'>
 
-        <h2 className=' underline text-purple-800 text-3xl p-3'>Name: {name_limited}</h2>
+        <h2 className=' underline text-purple-800 text-3xl p-3'>Name: {name}</h2>
        
         
         
@@ -41,11 +41,9 @@ export default async function RockObject({rock, id, is_potentially_hazardous_ast
        
 
       
-      
 
         <p className=''>First observation: {orbital_data.first_observation_date}</p>
         <p className=''>Last observation: {orbital_data.last_observation_date}</p>
-      
         <p>orbit uncertainty: {orbital_data.orbit_uncertainty}</p>
         <p>Is Potentially Dangerous: {is_potentially_hazardous_asteroid ? ("True") : ("False")}</p>
 
