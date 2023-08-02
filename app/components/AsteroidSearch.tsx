@@ -16,7 +16,7 @@ export default function AstroidSearch() {
     }
 
   return (
-    <form className='outline  outline-slate-700 rounded-lg p-3 text-lg items-center  m-2' onSubmit={handleSubmit}>
+    <form className='outline  outline-slate-700 rounded-lg p-3 text-lg items-center  m-2 ' onSubmit={handleSubmit}>
 
     <input className=' rounded-xl text-center mr-4' type='text' value={search} onChange={(e) => {setSearch(e.target.value)}} placeholder='look up asteroid ID ' />
 

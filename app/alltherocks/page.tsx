@@ -1,19 +1,20 @@
+import getAllAsteroid from "@/lib/getAllAsteroid"
 import RockObject from "../components/RockObject"
 
-    async function getAllRocks() {
-        const res = await fetch(`https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=${process.env.NASA_API_KEY}`)
+    // async function getAllRocks() {
+    //     const res = await fetch(`https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=${process.env.NASA_API_KEY}`)
 
-        if (!res.ok) {
+    //     if (!res.ok) {
 
-            throw new Error('fail to get data')
-        }
+    //         throw new Error('fail to get data')
+    //     }
 
-        return res.json()
-    }
+    //     return res.json()
+    // }
 
 export default async function page() {
 
-    const allRocks = await getAllRocks()
+    const allRocks = await getAllAsteroid()
     //console.log(allRocks.near_earth_objects)
     
   return (

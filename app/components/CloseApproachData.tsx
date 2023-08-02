@@ -10,28 +10,48 @@ export default async function CloseApproachData({close_approach_date_full, orbit
   // console.log(sliced)
   // console.log(close_approach_date_full)
   //console.log(miss_distance)
+
+  const mdMiles = Number(miss_distance.miles).toFixed()
+  const mdKilometers = Number(miss_distance.kilometers).toFixed()
+  const rvMPH = Number(relative_velocity.miles_per_hour).toFixed()
+  const rvKPH = Number(relative_velocity.kilometers_per_hour).toFixed()
+
+  
+  console.log( )
+  //console.log(miss_distance.miles)
     return (
       <>
         
-        <div className='p-4 outline outline-2 rounded-lg outline-purple-700 '>
+        <div className='p-4 outline outline-2 rounded-lg outline-purple-700 m-2 '>
           
-        <p className=' text-2xl'> Close Approach Date: </p>
+        <p className=' text-lg font-bold'> Approach Date: </p>
+        <div className='block mb-2'>
 
-          <p className='text-xl text-start inline-block p-4 '>| Passing at:  {close_approach_date_full} :  </p>
-          <p className='text-xl inline-block text-center'> orbiting : {orbiting_body} | </p>
+
+          <p className='inline-flex mr-4  '>   {close_approach_date_full}   </p>
+          <p className='inline-flex'> orbiting : {orbiting_body}  </p>
+        </div>
 
           
-          <h2 className=' text-2xl'>MISS DISTANCE:</h2>
+          <h2 className=' text-lg font-bold '>MISS DISTANCE:</h2>
           
-          
+          <div className='block mb-2'>
 
-          <p className=' text-xl'>kilometers: {miss_distance.kilometers}</p>
-          <p className='text-xl'>miles: {miss_distance.miles}</p>
 
-          <p className='text-2xl'>Traveling at:</p>
+          <p className='inline-flex text-lg mr-4'>miles: {mdMiles}</p>
+          <p className='inline-flex text-lg'>kilometers: {mdKilometers}</p>
 
-          <p className='text-xl'>MPH: {relative_velocity.miles_per_hour}</p>
-          <p className='text-xl'>KPH: {relative_velocity.kilometers_per_hour}</p>
+          </div>
+
+          <p className='text-lg font-bold'>Traveling at:</p>
+
+          <div className='block mb-2'>
+
+
+          <p className='inline-flex mr-4 text-lg'>MPH: {rvMPH}</p>
+          <p className='inline-flex text-lg'>KPH: {rvKPH}</p>
+
+          </div>
 
         </div>
        
