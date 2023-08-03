@@ -7,6 +7,18 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        
+        darkPurple: '#322653',
+        mdPurple: '#8062D6',
+        lightPurple: '#D7BBF5',
+        lightPink: '#FFD2D7',
+        lav: '#A78295',
+        
+
+
+      },
+
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':

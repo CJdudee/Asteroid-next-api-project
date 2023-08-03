@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className='bg-slate-500'>
+      <body className='bg-gradient-to-l from-slate-900 to-blue-900'>
         <Navbar />
         {children}
         </body>

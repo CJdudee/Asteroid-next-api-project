@@ -12,10 +12,10 @@ export default async function Home() {
   
 return (
   <>
-  <p className="text-2xl">add pagination to this page</p>
-  <p className="pt-4 pl-4 text-purple-900 text-2xl underline">browse asteroid</p>
-  <div className=" p-4">
-      <ul className="p-4">
+  <p className="text-2xl text-center mt-2">browse all asteroid</p>
+  
+  <div className="p-2  ">
+      <ul className="p-4 2xl:grid grid-cols-2 gap-3 ">
           {allRocks.near_earth_objects.map((rock: any) => (
               <>
               <RockObject key={rock.id} {...rock} rock={rock} />

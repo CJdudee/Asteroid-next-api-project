@@ -27,7 +27,7 @@ export default async function RockObject({rock, id, is_potentially_hazardous_ast
   
   
   return (
-    <div className=' w-full text-center bg-purple-400 gap-4 text-lg  p-8 rounded-xl border m-2'>
+    <div className=' w-full text-center bg-lightPurple gap-4 text-lg  p-8 rounded-xl border m-2'>
 
         <h2 className=' underline text-purple-800 text-3xl pb-3'>Name: {name_limited}</h2>
       
@@ -88,7 +88,7 @@ export default async function RockObject({rock, id, is_potentially_hazardous_ast
 
         {/* <button data-dropdown-toggle='dropdown' className='text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800' type='button'>Show when asteroid</button> */}
 
-        <ul className='grid grid-cols-1 md:grid-cols-2  bg-purple-600 rounded-lg mb-3 mt-3'>
+        <ul className='grid grid-cols-1 md:grid-cols-2   rounded-lg mb-3 mt-3'>
           
           {close_approach_data.slice(5,11).map((close: any) => (
             // <div className='outline outline-2 outline-purple-300 p-3 '>

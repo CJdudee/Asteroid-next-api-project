@@ -28,37 +28,70 @@ export default async function SingleRock({rock, id, is_potentially_hazardous_ast
   //console.log(orbital_data.orbit_class)
   
   return (
-    <div className=' w-full text-center bg-purple-400 gap-4 text-lg p-8 rounded-xl border m-2'>
+    
+   
+    <div className=' text-center bg-mdPurple gap-4 text-lg p-8 rounded-xl border '>
 
-        <h2 className=' underline text-purple-800 text-3xl p-3'>Name: {name}</h2>
+      <div className='inline-flex'>
+
+        <h2 className=' underline text-start text-purple-800 text-3xl p-3'>Name: {name}</h2>
+
+        <h1 className='  text-2xl  text-end'>ID: {id}</h1>
        
+      </div>
         
         
-        
+        <div className='bg-slate-200 rounded-sm mb-4  '>
 
-        <h2 className='items-start text-2xl'>details:</h2>
+
+        <h2 className=' text-2xl'>details:</h2>
 
        
+      <div className='md:grid  grid-cols-2  rounded-sm w-full mr-2 '>
 
       
+        
+        <p className='bg-slate-300'>First observation: {orbital_data.first_observation_date}</p>
+        <p className='bg-slate-400'>Last observation: {orbital_data.last_observation_date}</p>
 
-        <p className=''>First observation: {orbital_data.first_observation_date}</p>
-        <p className=''>Last observation: {orbital_data.last_observation_date}</p>
-        <p>orbit uncertainty: {orbital_data.orbit_uncertainty}</p>
-        <p>Is Potentially Dangerous: {is_potentially_hazardous_asteroid ? ("True") : ("False")}</p>
+        <p className='bg-slate-300'>orbit uncertainty: {orbital_data.orbit_uncertainty}</p>
+        <p className='bg-slate-400'>Is Potentially Dangerous: {is_potentially_hazardous_asteroid ? ("True") : ("False")}</p>
 
-        {is_potentially_hazardous_asteroid ? (<p className='text-lg'>This asteroid is Potentially Dangerous</p>) : (
-          <p className='text-lg'>This asteroid is not dangerous</p>
+      </div>
+
+        {is_potentially_hazardous_asteroid ? (<p className='text-xl mb-2 bg-slate-200'>This asteroid is Potentially Dangerous</p>) : (
+          <p className='text-xl mb-2 bg-slate-200'>This asteroid is not dangerous</p>
           )}
 
-        <p className=''>Estimated Diameter</p>
-          <h1 className='text-2xl '>Miles</h1>
+      </div>
+
+
+          <div className='bg-slate-200 rounded-sm'>
+
+
+
+        <h2 className='text-2xl mr-4 mb-4'>Estimated Diameter</h2>
+
+        <div className='  md:grid grid-cols-2 '>
+
+
+            <div className='bg-slate-300  '>
+
+            <h1 className='text-2xl  '>Miles</h1>
         <p>min size: {estimated_diameter.miles.estimated_diameter_min}</p>
         <p>max size: {estimated_diameter.miles.estimated_diameter_max}</p>
 
+            </div>
+
+          <div className='bg-slate-400 '>
         <h1 className='text-2xl'>Kilometers</h1>
         <p>min size: {estimated_diameter.kilometers.estimated_diameter_min}</p>
         <p>max size: {estimated_diameter.kilometers.estimated_diameter_max}</p>
+          </div>
+
+          </div>
+
+        </div>
 
 
         
@@ -66,19 +99,10 @@ export default async function SingleRock({rock, id, is_potentially_hazardous_ast
         <div className='inline-block'>
 
 
-        <ul className='grid grid-cols-2  bg-purple-600 rounded-lg mb-3 mt-3'>
+        <ul className='grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 grid-flow-row  bg-purple-600 rounded-lg mb-3 mt-3'>
           
-          {close_approach_data.slice(5,11).map((close: any) => (
-            // <div className='outline outline-2 outline-purple-300 p-3 '>
-            // <p className='inline-block p-4 text-center'>  {close.close_approach_date_full} :  </p>
-            // <p className='inline-block  text-center'> | orbiting : {close.orbiting_body} | </p>
-            // <p>Missed by: </p>
-            // <p>miles: {close.miss_distance.miles}</p>
-            // <p>kilometers: {close.miss_distance.kilometers}</p>
-            // <p>Traveling at:</p>
-            // <p>MPH: {close.relative_velocity.miles_per_hour}</p>
-            // <p>KPH: {close.relative_velocity.kilometers_per_hour}</p>
-            // </div>
+          {close_approach_data.map((close: any) => (
+            
             
             <CloseApproachData {...close} key={id} />
             ))}
@@ -89,17 +113,14 @@ export default async function SingleRock({rock, id, is_potentially_hazardous_ast
           <CloseApproachData {...close} key={id} />
         ))} */}
 
-        <p>Link: <a className='m-1 underline border rounded-md p-1' href={`${nasa_jpl_url}`}> {nasa_jpl_url}</a></p>
-
-        <h1>ID: {id}</h1>
+        
 
         
-        <ul>
 
-       
-
-        </ul>
+        
+        
         
     </div>
+        
   )
 }

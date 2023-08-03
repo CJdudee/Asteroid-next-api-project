@@ -19,6 +19,7 @@ export default async function page() {
     
   return (
     <>
+    <p>wrong page don't forget </p>
     <p className="text-2xl">add pagination to this page</p>
     <p className="pt-4 pl-4 text-purple-900 text-2xl underline">browse asteroid</p>
     <div className=" p-4">
