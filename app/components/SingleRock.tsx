@@ -30,9 +30,9 @@ export default async function SingleRock({rock, id, is_potentially_hazardous_ast
   return (
     
    
-    <div className=' text-center bg-mdPurple gap-4 text-lg p-8 rounded-xl border '>
+    <div className='w-full text-center bg-yveColor gap-4 text-lg p-6 rounded-xl border m-2'>
 
-      <div className='inline-flex'>
+      <div className='inline-flex pb-4'>
 
         <h2 className=' underline text-start text-purple-800 text-3xl p-3'>Name: {name}</h2>
 
@@ -41,32 +41,32 @@ export default async function SingleRock({rock, id, is_potentially_hazardous_ast
       </div>
         
         
-        <div className='bg-slate-200 rounded-sm mb-4  '>
+        <div className='outline outline-1 rounded-sm mb-4 mr-4 ml-4 p-1'>
 
 
         <h2 className=' text-2xl'>details:</h2>
 
        
-      <div className='md:grid  grid-cols-2  rounded-sm w-full mr-2 '>
+      <div className='md:grid  grid-cols-2   w-full mr-2 gap-2 pb-2   '>
 
       
         
-        <p className='bg-slate-300'>First observation: {orbital_data.first_observation_date}</p>
-        <p className='bg-slate-400'>Last observation: {orbital_data.last_observation_date}</p>
+        <p className='text-xl font-semibold'>First observation: {orbital_data.first_observation_date}</p>
+        <p className='text-xl font-semibold'>Last observation: {orbital_data.last_observation_date}</p>
 
-        <p className='bg-slate-300'>orbit uncertainty: {orbital_data.orbit_uncertainty}</p>
-        <p className='bg-slate-400'>Is Potentially Dangerous: {is_potentially_hazardous_asteroid ? ("True") : ("False")}</p>
+        <p className='text-xl font-semibold'>orbit uncertainty: {orbital_data.orbit_uncertainty}</p>
+        <p className='text-xl font-semibold'>Is Potentially Dangerous: {is_potentially_hazardous_asteroid ? ("True") : ("False")}</p>
 
       </div>
 
-        {is_potentially_hazardous_asteroid ? (<p className='text-xl mb-2 bg-slate-200'>This asteroid is Potentially Dangerous</p>) : (
-          <p className='text-xl mb-2 bg-slate-200'>This asteroid is not dangerous</p>
+        {is_potentially_hazardous_asteroid ? (<p className='text-xl mb-2  p-2'>This asteroid is Potentially Dangerous</p>) : (
+          <p className='text-xl mb-2 pb-2 '>This asteroid is not dangerous</p>
           )}
 
       </div>
 
 
-          <div className='bg-slate-200 rounded-sm'>
+          <div className='outline outline-1 rounded-sm mr-4 ml-4 p-1'>
 
 
 
@@ -75,18 +75,18 @@ export default async function SingleRock({rock, id, is_potentially_hazardous_ast
         <div className='  md:grid grid-cols-2 '>
 
 
-            <div className='bg-slate-300  '>
+            <div className=' pb-4 '>
 
-            <h1 className='text-2xl  '>Miles</h1>
-        <p>min size: {estimated_diameter.miles.estimated_diameter_min}</p>
-        <p>max size: {estimated_diameter.miles.estimated_diameter_max}</p>
+            <h1 className='text-2xl  font-semibold  '>Miles</h1>
+        <p className='text-xl font-semibold'>min size: {estimated_diameter.miles.estimated_diameter_min}</p>
+        <p className='text-xl font-semibold'>max size: {estimated_diameter.miles.estimated_diameter_max}</p>
 
             </div>
 
-          <div className='bg-slate-400 '>
-        <h1 className='text-2xl'>Kilometers</h1>
-        <p>min size: {estimated_diameter.kilometers.estimated_diameter_min}</p>
-        <p>max size: {estimated_diameter.kilometers.estimated_diameter_max}</p>
+          <div className='pb-4 '>
+        <h1 className='text-2xl font-semibold'>Kilometers</h1>
+        <p className='text-xl font-semibold'>min size: {estimated_diameter.kilometers.estimated_diameter_min}</p>
+        <p className='text-xl font-semibold'>max size: {estimated_diameter.kilometers.estimated_diameter_max}</p>
           </div>
 
           </div>
@@ -96,10 +96,10 @@ export default async function SingleRock({rock, id, is_potentially_hazardous_ast
 
         
 
-        <div className='inline-block'>
+        <div className=''>
 
 
-        <ul className='grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 grid-flow-row  bg-purple-600 rounded-lg mb-3 mt-3'>
+        <ul className='grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 grid-flow-row   rounded-lg mb-3 mt-3'>
           
           {close_approach_data.map((close: any) => (
             

@@ -6,12 +6,12 @@ import AstroidDate from './AsteroidDate'
 export default function Navbar() {
     return (
         
-        <nav className=' bg-transparent  pt-2 pr-4 pl-4 sticky mb-4 pb-1 outline'>
+        <nav className=' bg-yveNavbar  pt-2 pr-4 pl-4 sticky  pb-1 '>
 
             <div className=' flex justify-evenly align-bottom flex-col md:flex-row  top-0 drop-shadow-xl'>
 
-                <h1 className='hidden text-3xl font-bold  text-white xl:grid place-content-center mb-2 md:mb-1'>
-                    <Link href='..'>RockOClock</Link>
+                <h1 className='hidden text-3xl font-bold  text-white lg:grid place-content-center mb-2 md:mb-1'>
+                    <Link className='hover:text-yveColor' href='/'>RockOClock</Link>
                 </h1>
 
                 <div className='text-center text-sm'>
@@ -27,7 +27,7 @@ export default function Navbar() {
                 </div>
                 <div className=''>
 
-            <ul className='  w-full pb-1 xl:hidden ' >
+            <ul className='  w-full pb-1 lg:hidden ' >
                 
                 <div className='flex justify-evenly'>
 

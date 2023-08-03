@@ -14,6 +14,14 @@ module.exports = {
         lightPurple: '#D7BBF5',
         lightPink: '#FFD2D7',
         lav: '#A78295',
+        darkRed: '#85302a',
+        lightRed: '	#bd645e',
+        yveColor: '#C197D2',
+        yveBoxes: '#BF94E4',
+        yveNavbar: '#211522',
+        yveBg: '#613659',
+
+
         
 
 

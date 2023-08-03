@@ -23,49 +23,58 @@ export default async function DateRockObject({rock, id, is_potentially_hazardous
   // console.log(CloseApproachData)
   // console.log(nasa_jpl_url)
   // console.log(links)
-  console.log(close_approach_data)
+  //console.log(rock)
   // const close_approach_date = close_approach_data.close_approach_date
   // const close_approach_date = close_approach_data.close_approach_date
   //console.log(orbital_data.orbit_class)
   
   return (
-    <div className=' w-full text-center bg-purple-400 gap-4 text-lg p-8 rounded-xl border m-2'>
+    <div className='w-full text-center bg-yveColor gap-4 text-lg  p-6 rounded-xl border m-2'>
+
+        <div className='inline-flex'>
 
         <h2 className=' underline text-purple-800 text-3xl p-3'>Name: {name}</h2>
+
+        <Link className='text-2xl hover:text-white' href={`/rocktheone/${id}`}>ID: {id}</Link>
        
-        
-        
-        
+        </div>
 
-        <h2 className='items-start text-2xl'>details:</h2>
-
-       
-
-      
-
-        
-        <p>Is Potentially Dangerous: {is_potentially_hazardous_asteroid ? ("True") : ("False")}</p>
-
-        {is_potentially_hazardous_asteroid ? (<p className='text-lg'>This asteroid is Potentially Dangerous</p>) : (
-          <p className='text-lg'>This asteroid is not dangerous</p>
+        {is_potentially_hazardous_asteroid ? (<p className='text-2xl m-4'>This asteroid is Potentially Dangerous</p>) : (
+          <p className='text-2xl m-4'>This asteroid is not dangerous</p>
           )}
-
-        <p className=''>Estimated Diameter</p>
-          <h1 className='text-2xl '>Miles</h1>
-        <p>min size: {estimated_diameter.miles.estimated_diameter_min}</p>
-        <p>max size: {estimated_diameter.miles.estimated_diameter_max}</p>
-
-        <h1 className='text-2xl'>Kilometers</h1>
-        <p>min size: {estimated_diameter.kilometers.estimated_diameter_min}</p>
-        <p>max size: {estimated_diameter.kilometers.estimated_diameter_max}</p>
-
+        
+        <div className='outline outline-1 rounded-sm mb-4 mr-4 ml-4 p-1'>
 
         
 
-        <div className='inline-block'>
+        <p className='text-2xl mr-4 mb-4'>Estimated Diameter</p>
+
+        <div className='md:grid grid-cols-2'>
+
+          <div className='pb-4'>
+
+          <h1 className='text-2xl  font-semibold '>Miles</h1>
+        <p className='text-xl  font-semibold'>min size: {estimated_diameter.miles.estimated_diameter_min}</p>
+        <p className='text-xl  font-semibold'>max size: {estimated_diameter.miles.estimated_diameter_max}</p>
+
+          </div>
+
+          <div className='pb-4'>
+
+        <h1 className='text-2xl  font-semibold'>Kilometers</h1>
+        <p className='text-xl  font-semibold'>min size: {estimated_diameter.kilometers.estimated_diameter_min}</p>
+        <p className='text-xl  font-semibold'>max size: {estimated_diameter.kilometers.estimated_diameter_max}</p>
+
+          </div>
+
+        </div>
+          </div>
+        
+
+        <div className=''>
 
 
-        <ul className='grid grid-cols-2  bg-purple-600 rounded-lg mb-3 mt-3'>
+        <ul className='grid grid-cols-1  rounded-lg mb-3 mt-3'>
           
           {close_approach_data.map((close: any) => (
             // <div className='outline outline-2 outline-purple-300 p-3 '>
@@ -88,13 +97,7 @@ export default async function DateRockObject({rock, id, is_potentially_hazardous
           <CloseApproachData {...close} key={id} />
         ))} */}
         
-        <div className='inline-flex'>
-
-        <p className='inline-block text-xl'>Link: <a className='m-1 underline border rounded-md p-1' href={`${nasa_jpl_url}`}> {nasa_jpl_url}</a></p>
-
-        <Link className='text-xl pl-4 underline underline-offset-4' href={`/rocktheone/${id}`}>ID: {id}</Link>
-
-        </div>
+        
         
         
         

@@ -27,29 +27,36 @@ export default async function RockObject({rock, id, is_potentially_hazardous_ast
   
   
   return (
-    <div className=' w-full text-center bg-lightPurple gap-4 text-lg  p-8 rounded-xl border m-2'>
+    <div className=' w-full text-center bg-yveColor gap-4 text-lg  p-6 rounded-xl border m-2'>
 
-        <h2 className=' underline text-purple-800 text-3xl pb-3'>Name: {name_limited}</h2>
+
+        <div className='inline-flex '>
+
+
+        <h2 className=' underline text-purple-800 text-3xl p-3'>Name: {name_limited}</h2>
       
+
+        <Link className=' text-2xl  text-end hover:text-white' href={`/rocktheone/${id}`}>ID: {id}</Link>
         
+        </div>
         
-        <div className='lg:flex'>
+        <div className='outline outline-1 rounded-sm mb-4 mr-4 ml-4 p-1'>
 
 
 
       
-        <p className=' text-xl mr-9 mb-4'>details: </p>
+        <p className=' text-2xl'>details: </p>
 
-        <div className='md:grid grid-cols-2 justify-evenly  mb-4 outline rounded-sm w-full mr-2 pr-2  '>
+        <div className='md:grid grid-cols-2   mb-4  w-full mr-2 gap-2 pb-2  '>
 
       
       
 
-        <p className=''>First observation: {orbital_data.first_observation_date}</p>
-        <p className=''>Last observation: {orbital_data.last_observation_date}</p>
+        <p className='text-xl font-semibold'>First observation: {orbital_data.first_observation_date}</p>
+        <p className='text-xl font-semibold'>Last observation: {orbital_data.last_observation_date}</p>
       
-        <p>orbit uncertainty: {orbital_data.orbit_uncertainty}</p>
-        <p>Is Potentially Dangerous: {is_potentially_hazardous_asteroid ? ("True") : ("False")}</p>
+        <p className='text-xl font-semibold'>orbit uncertainty: {orbital_data.orbit_uncertainty}</p>
+        <p className='text-xl font-semibold'>Is Potentially Dangerous: {is_potentially_hazardous_asteroid ? ("True") : ("False")}</p>
 
         {/* {is_potentially_hazardous_asteroid ? (<p className='text-lg'>This asteroid is Potentially Dangerous</p>) : (
           <p className='text-lg'>This asteroid is not dangerous</p>
@@ -60,23 +67,30 @@ export default async function RockObject({rock, id, is_potentially_hazardous_ast
 
 
           
-        <div className='lg:flex'>
+        <div className='outline outline-1 rounded-sm mr-4 ml-4 p-1'>
 
 
-        <p className='text-xl mr-4 mb-4'>Est diameter: </p>
-          <div className=' w-full lg:flex outline rounded-sm mr-2 pr-2 ' >
+        <p className='text-2xl mr-4 mb-4'>Estimated Diameter: </p>
 
-          <h1 className='pl-2 text-lg w-1/3 '>Miles:</h1>
-        <p className='mr-5'>min size: {estimated_diameter.miles.estimated_diameter_min.toFixed(3)}</p>
-        <p>max size: {estimated_diameter.miles.estimated_diameter_max.toFixed(3)}</p>
+        <div className='md:grid grid-cols-2'>
+
+
+          <div className=' pb-4 ' >
+
+          <h1 className='text-2xl  font-semibold '>Miles:</h1>
+        <p className='text-xl font-semibold'>min size: {estimated_diameter.miles.estimated_diameter_min.toFixed(3)}</p>
+        
+        <p className='text-xl font-semibold'>max size: {estimated_diameter.miles.estimated_diameter_max.toFixed(3)}</p>
           </div>
 
-        <div className='w-full lg:flex outline rounded-sm mr-2 pr-2  '>
+        <div className='pb-4  '>
 
 
-        <h1 className='pl-2 text-lg w-1/3'>Kilometers:</h1>
-        <p className='mr-5'>min size: {estimated_diameter.kilometers.estimated_diameter_min.toFixed(3)}</p>
-        <p>max size: {estimated_diameter.kilometers.estimated_diameter_max.toFixed(3)}</p>
+        <h1 className='text-2xl  font-semibold'>Kilometers:</h1>
+        <p className='text-xl font-semibold'>min size: {estimated_diameter.kilometers.estimated_diameter_min.toFixed(3)}</p>
+        <p className='text-xl font-semibold'>max size: {estimated_diameter.kilometers.estimated_diameter_max.toFixed(3)}</p>
+        </div>
+
         </div>
 
         </div>
@@ -111,9 +125,9 @@ export default async function RockObject({rock, id, is_potentially_hazardous_ast
           <CloseApproachData {...close} key={id} />
         ))} */}
 
-        <p className='mt-4 mb-4'>Link: <a className='m-1  underline border rounded-md p-1' href={`${nasa_jpl_url}`}> {nasa_jpl_url}</a></p>
+        
 
-        <Link className=' text-xl underline underline-offset-2' href={`/rocktheone/${id}`}>ID: {id}</Link>
+        
 
         
         

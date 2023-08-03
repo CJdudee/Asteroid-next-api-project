@@ -18,7 +18,7 @@ export default function AstroidDate() {
     }
 
   return (
-    <form className='outline  outline-slate-700 rounded-lg p-3 text-lg items-center  m-2' onSubmit={handleSubmit}>
+    <form className='outline  outline-yveBg outline-2 rounded-lg p-3 text-lg items-center  m-2' onSubmit={handleSubmit}>
         
     <input name='start_date' id='start_date' className=' rounded-xl text-center mr-4 text-slate-900 font-bold' type='date' value={start_date} onChange={(e) => {setStart_date(e.target.value)}} />
 

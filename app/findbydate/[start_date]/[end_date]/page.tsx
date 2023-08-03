@@ -21,7 +21,7 @@ export default async function AsteroidPage({params: {start_date, end_date}}: Par
 
     //console.log(asteroidByDate)
     
-    const dateKeys = Object.keys(asteroidByDate.near_earth_objects)
+    
 
     // const fullKeys = asteroidByDate.near_earth_objects.map((rock: any) => {
     //     return Object.entries(rock).map( ([key, val]) => ({date: key, value: {stringValue: val}}))
@@ -37,16 +37,21 @@ export default async function AsteroidPage({params: {start_date, end_date}}: Par
     // console.log(asteroidByDate.near_earth_objects)
   return (
     <>
-    <div className=" p-4">
-        <ul className="p-4">
+
+    <h2 className='text-3xl text-center mt-4 text-white font-bold'>Asteriods from {start_date} to {end_date}</h2>
+    
+        <div className="p-6 mt-4 ">
+            <ul className='xl:grid grid-cols-2  gap-3'>
+
             {flatArray.map((r: any) => {
                 return (
-                    <DateRockObject {...r} />
-                )
-            })}
-            fix please
-        </ul>
-    </div>
+                    <DateRockObject {...r} rock={r} />
+                    )
+                })}
+            
+                </ul>
+        </div>
+    
     </>
   )
 }
