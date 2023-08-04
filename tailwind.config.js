@@ -9,17 +9,11 @@ module.exports = {
     extend: {
       colors: {
         
-        darkPurple: '#322653',
-        mdPurple: '#8062D6',
-        lightPurple: '#D7BBF5',
-        lightPink: '#FFD2D7',
-        lav: '#A78295',
-        darkRed: '#85302a',
-        lightRed: '	#bd645e',
-        yveColor: '#C197D2',
-        yveBoxes: '#BF94E4',
-        yveNavbar: '#211522',
-        yveBg: '#613659',
+        
+        infoCardColor: '#C197D2',
+        Boxes: '#BF94E4',
+        Navbar: '#211522',
+        Bg: '#613659',
 
 
         

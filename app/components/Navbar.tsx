@@ -6,7 +6,7 @@ import AstroidDate from './AsteroidDate'
 export default function Navbar() {
     return (
         
-        <nav className=' bg-yveNavbar  pt-2 pr-4 pl-4 sticky  pb-1 '>
+        <nav className=' bg-Navbar  pt-2 pr-4 pl-4 sticky  pb-1 '>
 
             <div className=' flex justify-evenly align-bottom flex-col md:flex-row  top-0 drop-shadow-xl'>
 

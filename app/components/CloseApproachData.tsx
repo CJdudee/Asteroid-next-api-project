@@ -22,7 +22,7 @@ export default async function CloseApproachData({close_approach_date_full, orbit
     return (
       <>
         
-        <div className='p-4 outline outline-1  rounded-lg bg-yveBoxes  m-2 '>
+        <div className='p-4 outline outline-1  rounded-lg bg-Boxes  m-2 '>
           
         <p className=' text-xl font-bold'> Approach Date: </p>
         <div className='block mb-2'>

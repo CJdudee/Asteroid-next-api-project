@@ -1,8 +1,9 @@
-import Image from 'next/image'
 import React from 'react'
-import { Url } from 'url'
 import CloseApproachData from './CloseApproachData'
 import Link from 'next/link'
+
+
+//these components are slightly different cause the api sends different data 
 
 export default async function DateRockObject({rock, id, is_potentially_hazardous_asteroid, name, nasa_jpl_url, close_approach_data, links, estimated_diameter }: {
     rock: object
@@ -29,9 +30,9 @@ export default async function DateRockObject({rock, id, is_potentially_hazardous
   //console.log(orbital_data.orbit_class)
   
   return (
-    <div className='w-full text-center bg-yveColor gap-4 text-lg  p-6 rounded-xl border m-2'>
+    <div className='w-full text-center bg-infoCardColor gap-4 text-lg  p-6 rounded-xl border m-3'>
 
-        <div className='inline-flex'>
+        <div className='inline-flex pb-4'>
 
         <h2 className=' underline text-purple-800 text-3xl p-3'>Name: {name}</h2>
 
@@ -39,7 +40,7 @@ export default async function DateRockObject({rock, id, is_potentially_hazardous
        
         </div>
 
-        {is_potentially_hazardous_asteroid ? (<p className='text-2xl m-4'>This asteroid is Potentially Dangerous</p>) : (
+        {is_potentially_hazardous_asteroid ? (<p className='text-2xl mb-4'>This asteroid is Potentially Dangerous</p>) : (
           <p className='text-2xl m-4'>This asteroid is not dangerous</p>
           )}
         

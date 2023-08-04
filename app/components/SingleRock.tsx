@@ -1,7 +1,7 @@
-import Image from 'next/image'
 import React from 'react'
-import { Url } from 'url'
 import CloseApproachData from './CloseApproachData'
+
+//these components are slightly different cause the api sends different data 
 
 export default async function SingleRock({rock, id, is_potentially_hazardous_asteroid, name, nasa_jpl_url, close_approach_data, links, orbital_data, estimated_diameter }: {
     rock: object
@@ -30,11 +30,11 @@ export default async function SingleRock({rock, id, is_potentially_hazardous_ast
   return (
     
    
-    <div className='w-full text-center bg-yveColor gap-4 text-lg p-6 rounded-xl border m-2'>
+    <div className='w-full text-center bg-infoCardColor gap-4 text-lg p-6 rounded-xl border m-3'>
 
       <div className='inline-flex pb-4'>
 
-        <h2 className=' underline text-start text-purple-800 text-3xl p-3'>Name: {name}</h2>
+        <h2 className=' underline  text-purple-800 text-3xl p-3'>Name: {name}</h2>
 
         <h1 className='  text-2xl  text-end'>ID: {id}</h1>
        
