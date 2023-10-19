@@ -3,7 +3,7 @@ import CloseApproachData from './CloseApproachData'
 
 //these components are slightly different cause the api sends different data 
 
-export default async function SingleRock({rock, id, is_potentially_hazardous_asteroid, name, nasa_jpl_url, close_approach_data, links, orbital_data, estimated_diameter }: {
+export default async function SingleRock({ rock, id, is_potentially_hazardous_asteroid, name, nasa_jpl_url, close_approach_data, links, orbital_data, estimated_diameter }: {
     rock: object
     id: number
     is_potentially_hazardous_asteroid: boolean
@@ -30,7 +30,7 @@ export default async function SingleRock({rock, id, is_potentially_hazardous_ast
   return (
     
    
-    <div className='w-full text-center bg-infoCardColor gap-4 text-lg p-6 rounded-xl border m-3'>
+    <div className='w-full text-center bg-lightBrown gap-4 text-lg p-6 rounded-xl border '>
 
       <div className='inline-flex pb-4'>
 

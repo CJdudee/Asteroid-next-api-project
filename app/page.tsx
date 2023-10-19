@@ -9,8 +9,7 @@ export default async function Home() {
   
 return (
   <>
-  
-  <div className="p-8  mb-4 ">
+  <div className="p-6  mb-4 flex justify-center ">
       <ul className=" 2xl:grid grid-cols-2 gap-3 ">
           {allRocks.near_earth_objects.map((rock: any) => (
               
@@ -19,7 +18,7 @@ return (
           ))}
       </ul>
   </div>
-          </>
+  </>
 )
 }
   

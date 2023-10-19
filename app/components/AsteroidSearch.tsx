@@ -16,7 +16,7 @@ export default function AstroidSearch() {
     }
 
   return (
-    <form className='outline outline-yveBg outline-2 rounded-lg p-3 text-lg items-center  m-2 ' onSubmit={handleSubmit}>
+    <form className=' rounded-lg p-3 text-lg items-center  m-2 ' onSubmit={handleSubmit}>
 
     <input className=' rounded-xl pl-3 text-start mr-4 text-black' type='text' value={search} onChange={(e) => {setSearch(e.target.value)}} placeholder='0000000' />
 

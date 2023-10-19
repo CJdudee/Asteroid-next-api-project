@@ -30,7 +30,7 @@ export default async function DateRockObject({rock, id, is_potentially_hazardous
   //console.log(orbital_data.orbit_class)
   
   return (
-    <div className='w-full text-center bg-infoCardColor gap-4 text-lg  p-6 rounded-xl border m-3'>
+    <div className='w-full text-center bg-lightBrown gap-4 text-lg  p-6 rounded-xl border mb-2'>
 
         <div className='inline-flex pb-4'>
 

@@ -1,17 +1,23 @@
+'use client'
+
 import Link from 'next/link'
 import AsteroidPage from '../rocktheone/[asteroidId]/page'
 import AstroidSearch from './AsteroidSearch'
 import AstroidDate from './AsteroidDate'
+import { usePathname } from 'next/navigation'
 
 export default function Navbar() {
+
+    const pathname = usePathname()
+
     return (
         
-        <nav className=' bg-Navbar  pt-2 pr-4 pl-4 sticky  pb-1 '>
+        <nav className=' bg-blue-900  pt-2 pr-4 pl-4 sticky  pb-1 '>
 
             <div className=' flex justify-evenly align-bottom flex-col md:flex-row  top-0 drop-shadow-xl'>
 
                 <h1 className='hidden text-3xl font-bold  text-white lg:grid place-content-center mb-2 md:mb-1'>
-                    <Link className='hover:text-yveColor' href='/'>RockOClock</Link>
+                    <Link className='' href='/'>RockOClock</Link>
                 </h1>
 
                 <div className='text-center text-sm'>
@@ -29,13 +35,14 @@ export default function Navbar() {
 
             <ul className='  w-full pb-1 lg:hidden ' >
                 
-                <div className='flex justify-evenly'>
+                <div className={`flex justify-evenly ${pathname === '/' ? 'hidden' : ''} `}>
 
-                <Link href='/' className='text-white'>Home</Link>
+                <Link href='/' className='text-white hover:text-gray-300'>Home</Link>
                 </div>
+
             </ul>
             
-                </div>
+            </div>
             
             {/* <h1 className='items-end  align-bottom text-white '>BETA 0.0.1</h1> */}
         </nav>

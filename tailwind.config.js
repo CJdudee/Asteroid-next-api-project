@@ -16,7 +16,7 @@ module.exports = {
         Bg: '#613659',
 
 
-        
+        lightBrown: '#C4A484',
 
 
       },
