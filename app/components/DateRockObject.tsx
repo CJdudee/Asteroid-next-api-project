@@ -30,13 +30,13 @@ export default async function DateRockObject({rock, id, is_potentially_hazardous
   //console.log(orbital_data.orbit_class)
   
   return (
-    <div className='w-full text-center bg-lightBrown gap-4 text-lg  p-6 rounded-xl border mb-2'>
+    <div className='w-full text-center bg-gray-200 gap-4 text-lg  p-6 rounded-xl border border-orange-500 border-x-2 border-y-2 mb-2'>
 
         <div className='inline-flex pb-4'>
 
         <h2 className=' underline text-purple-800 text-3xl p-3'>Name: {name}</h2>
 
-        <Link className='text-2xl hover:text-white' href={`/rocktheone/${id}`}>ID: {id}</Link>
+        <Link className='text-2xl hover:text-orange-400' href={`/rocktheone/${id}`}>ID: {id}</Link>
        
         </div>
 

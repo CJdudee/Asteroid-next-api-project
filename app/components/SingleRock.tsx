@@ -30,7 +30,7 @@ export default async function SingleRock({ rock, id, is_potentially_hazardous_as
   return (
     
    
-    <div className='w-full text-center bg-lightBrown gap-4 text-lg p-6 rounded-xl border '>
+    <div className='w-full text-center bg-gray-200 gap-4 text-lg p-6 rounded-xl  max-w-7xl mx-auto border border-orange-500 border-x-2 border-y-2 '>
 
       <div className='inline-flex pb-4'>
 
@@ -41,23 +41,23 @@ export default async function SingleRock({ rock, id, is_potentially_hazardous_as
       </div>
         
         
-        <div className='outline outline-1 rounded-sm mb-4 mr-4 ml-4 p-1'>
+      <div className='outline outline-1 rounded-sm mb-4 mr-4 ml-4 p-1'>
 
 
-        <h2 className=' text-2xl'>details:</h2>
+        <h2 className=' text-2xl font-bold'>Details:</h2>
 
        
-      <div className='md:grid  grid-cols-2   w-full mr-2 gap-2 pb-2   '>
+        <div className='md:grid  grid-cols-2   w-full mr-2 gap-2 pb-2   '>
 
       
         
-        <p className='text-xl font-semibold'>First observation: {orbital_data.first_observation_date}</p>
-        <p className='text-xl font-semibold'>Last observation: {orbital_data.last_observation_date}</p>
+          <p className='text-xl font-semibold'>First observation: {orbital_data.first_observation_date}</p>
+          <p className='text-xl font-semibold'>Last observation: {orbital_data.last_observation_date}</p>
 
-        <p className='text-xl font-semibold'>orbit uncertainty: {orbital_data.orbit_uncertainty}</p>
-        <p className='text-xl font-semibold'>Is Potentially Dangerous: {is_potentially_hazardous_asteroid ? ("True") : ("False")}</p>
+          <p className='text-xl font-semibold'>orbit uncertainty: {orbital_data.orbit_uncertainty}</p>
+          <p className='text-xl font-semibold'>Is Potentially Dangerous: {is_potentially_hazardous_asteroid ? ("True") : ("False")}</p>
 
-      </div>
+        </div>
 
         {is_potentially_hazardous_asteroid ? (<p className='text-xl mb-2  p-2'>This asteroid is Potentially Dangerous</p>) : (
           <p className='text-xl mb-2 pb-2 '>This asteroid is not dangerous</p>
@@ -66,27 +66,30 @@ export default async function SingleRock({ rock, id, is_potentially_hazardous_as
       </div>
 
 
-          <div className='outline outline-1 rounded-sm mr-4 ml-4 p-1'>
+        <div className='outline outline-1 rounded-sm mr-4 ml-4 p-1'>
 
 
 
-        <h2 className='text-2xl mr-4 mb-4'>Estimated Diameter</h2>
+        <h2 className='text-2xl mr-4 mb-4 font-bold'>Estimated Diameter:</h2>
 
         <div className='  md:grid grid-cols-2 '>
 
 
             <div className=' pb-4 '>
 
-            <h1 className='text-2xl  font-semibold  '>Miles</h1>
-        <p className='text-xl font-semibold'>min size: {estimated_diameter.miles.estimated_diameter_min}</p>
-        <p className='text-xl font-semibold'>max size: {estimated_diameter.miles.estimated_diameter_max}</p>
+              <h1 className='text-2xl  font-semibold  '>Miles</h1>
+
+              <p className='text-xl font-semibold mb-1'>min size: {estimated_diameter.miles.estimated_diameter_min}</p>
+              <p className='text-xl font-semibold'>max size: {estimated_diameter.miles.estimated_diameter_max}</p>
 
             </div>
 
           <div className='pb-4 '>
-        <h1 className='text-2xl font-semibold'>Kilometers</h1>
-        <p className='text-xl font-semibold'>min size: {estimated_diameter.kilometers.estimated_diameter_min}</p>
-        <p className='text-xl font-semibold'>max size: {estimated_diameter.kilometers.estimated_diameter_max}</p>
+            <h1 className='text-2xl font-semibold'>Kilometers</h1>
+
+            <p className='text-xl font-semibold mb-1'>min size: {estimated_diameter.kilometers.estimated_diameter_min}</p>
+
+            <p className='text-xl font-semibold'>max size: {estimated_diameter.kilometers.estimated_diameter_max}</p>
           </div>
 
           </div>

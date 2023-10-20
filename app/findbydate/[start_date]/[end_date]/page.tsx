@@ -21,7 +21,7 @@ export default async function AsteroidPage({params: {start_date, end_date}}: Par
 
     //console.log(asteroidByDate)
     
-    
+     
 
     
 

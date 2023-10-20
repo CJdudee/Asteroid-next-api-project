@@ -1,6 +1,8 @@
+'use client'
+
 import React from 'react'
 
-export default async function CloseApproachData({close_approach_date_full, orbiting_body, miss_distance, relative_velocity}: {
+export default  function CloseApproachData({close_approach_date_full, orbiting_body, miss_distance, relative_velocity}: {
   close_approach_date_full: string 
   orbiting_body: string
   miss_distance: any

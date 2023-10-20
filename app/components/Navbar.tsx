@@ -12,28 +12,30 @@ export default function Navbar() {
 
     return (
         
-        <nav className=' bg-blue-900  pt-2 pr-4 pl-4 sticky  pb-1 '>
+        <nav className=' bg-blue-900  pt-1  sticky    '>
 
-            <div className=' flex justify-evenly align-bottom flex-col md:flex-row  top-0 drop-shadow-xl'>
+            <div className=' flex justify-evenly pb-2 gap-1'>
 
                 <h1 className='hidden text-3xl font-bold  text-white lg:grid place-content-center mb-2 md:mb-1'>
                     <Link className='' href='/'>RockOClock</Link>
                 </h1>
 
-                <div className='text-center text-sm'>
-                <AstroidSearch />
-                    <p className='text-white '>Find by ID</p>
+
+                <div className='text-center '>
+                    <AstroidSearch />
+                    
                 </div>
 
                 <div className='text-center '>
                     <AstroidDate />
-                    <p className='text-white text-sm'>Find by date - only a week timeframe</p>
+                    
                 </div>
 
-                </div>
+            </div>
+
                 <div className=''>
 
-            <ul className='  w-full pb-1 lg:hidden ' >
+            <ul className='  w-full mt-1 outline outline-1 lg:hidden ' >
                 
                 <div className={`flex justify-evenly ${pathname === '/' ? 'hidden' : ''} `}>
 

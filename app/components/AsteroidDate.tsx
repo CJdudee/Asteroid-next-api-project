@@ -18,14 +18,26 @@ export default function AstroidDate() {
     }
 
   return (
-    <form className=' rounded-lg p-3 text-lg items-center  m-2' onSubmit={handleSubmit}>
+    <form className=' rounded-lg text-xs  md:text-lg   ' onSubmit={handleSubmit}>
+
+    <p className='text-white text-sm text-center'>Only a week timeframe</p>
+
+    <div className='flex gap-2'>
+      
+      <div className='grid grid-cols-2 md:flex justify-center gap-2'>
+
+    <input name='start_date' id='start_date' className=' rounded-xl text-center  ' type='date' value={start_date} onChange={(e) => {setStart_date(e.target.value)}} />
         
-    <input name='start_date' id='start_date' className=' rounded-xl text-center mr-4 text-slate-900 font-bold' type='date' value={start_date} onChange={(e) => {setStart_date(e.target.value)}} />
 
-    <input className=' rounded-xl text-center mr-4 font-bold' type='date' value={end_date} onChange={(e) => {setEnd_Date(e.target.value)}} />
-
+    <input className=' rounded-xl text-center  ' type='date' value={end_date} onChange={(e) => {setEnd_Date(e.target.value)}} />
+      
+      </div>
 
     <button className='text-white' type='submit'>Find</button>
+    </div>
+
+
+    
 
 
     </form>
