@@ -32,41 +32,44 @@ export default async function SingleRock({ rock, id, is_potentially_hazardous_as
    
     <div className='w-full text-center bg-gray-200 gap-4 text-lg p-6 rounded-xl  max-w-7xl mx-auto border border-orange-500 border-x-2 border-y-2 '>
 
-      <div className='inline-flex pb-4'>
+      <div className='inline-flex pb-4 '>
 
-        <h2 className=' underline  text-purple-800 text-3xl p-3'>Name: {name}</h2>
+        <h2 className=' underline  text-purple-800 text-3xl p-3  '>Name: {name}</h2>
 
-        <h1 className='  text-2xl  text-end'>ID: {id}</h1>
+        <h1 className='  text-2xl mr-2   '>ID: {id}</h1>
        
       </div>
+       
+        {/*  div containing Details section and Est Diameter */}
+        <div className=''>
+
         
-        
-      <div className='outline outline-1 rounded-sm mb-4 mr-4 ml-4 p-1'>
+      <div className='outline outline-1 rounded-lg mb-4 mx-3 p-1'>
 
 
         <h2 className=' text-2xl font-bold'>Details:</h2>
 
        
-        <div className='md:grid  grid-cols-2   w-full mr-2 gap-2 pb-2   '>
+        <div className='md:grid  grid-cols-2   w-full gap-2 pb-2 text-lg sm:text-xl    '>
 
       
         
-          <p className='text-xl font-semibold'>First observation: {orbital_data.first_observation_date}</p>
-          <p className='text-xl font-semibold'>Last observation: {orbital_data.last_observation_date}</p>
+          <p className=' font-semibold'>First observation: {orbital_data.first_observation_date}</p>
+          <p className=' font-semibold'>Last observation: {orbital_data.last_observation_date}</p>
 
-          <p className='text-xl font-semibold'>orbit uncertainty: {orbital_data.orbit_uncertainty}</p>
-          <p className='text-xl font-semibold'>Is Potentially Dangerous: {is_potentially_hazardous_asteroid ? ("True") : ("False")}</p>
+          <p className=' font-semibold'>orbit uncertainty: {orbital_data.orbit_uncertainty}</p>
+          <p className=' font-semibold'>Is Potentially Dangerous: {is_potentially_hazardous_asteroid ? ("True") : ("False")}</p>
 
         </div>
 
-        {is_potentially_hazardous_asteroid ? (<p className='text-xl mb-2  p-2'>This asteroid is Potentially Dangerous</p>) : (
+        {is_potentially_hazardous_asteroid ? (<p className='text-xl mb-2 pb-2'>This asteroid is Potentially Dangerous</p>) : (
           <p className='text-xl mb-2 pb-2 '>This asteroid is not dangerous</p>
           )}
 
       </div>
 
 
-        <div className='outline outline-1 rounded-sm mr-4 ml-4 p-1'>
+        <div className='outline outline-1 rounded-lg mr-3 ml-3 p-1'>
 
 
 
@@ -96,10 +99,13 @@ export default async function SingleRock({ rock, id, is_potentially_hazardous_as
 
         </div>
 
+        </div>
+
+
 
         
 
-        <div className=''>
+        <div className='p-1'>
 
 
         <ul className='grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 grid-flow-row   rounded-lg mb-3 mt-3'>
@@ -111,17 +117,10 @@ export default async function SingleRock({ rock, id, is_potentially_hazardous_as
             ))}
         </ul>
 
-            </div>
+        </div>
         {/* {close_approach_data.slice(5, 10).map((close: any) => (
           <CloseApproachData {...close} key={id} />
         ))} */}
-
-        
-
-        
-
-        
-        
         
     </div>
         

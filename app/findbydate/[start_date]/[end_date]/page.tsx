@@ -20,9 +20,8 @@ export default async function AsteroidPage({params: {start_date, end_date}}: Par
     const asteroidByDate = await asteroidData
 
     //console.log(asteroidByDate)
-    
-     
 
+    
     
 
     

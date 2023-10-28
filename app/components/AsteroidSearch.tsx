@@ -16,13 +16,13 @@ export default function AstroidSearch() {
     }
 
   return (
-    <form className=' rounded-lg  text-xs md:text-lg items-center   ' onSubmit={handleSubmit}>
+    <form className=' rounded-lg  text-xs md:text-lg items-center mt-4   ' onSubmit={handleSubmit}>
 
-    <p className='text-white text-center text-sm   '>Find by ID</p>
+    {/* <p className='text-white text-center text-sm    '>Find by ID</p> */}
 
-    <input className=' rounded-xl pl-3 text-start mr-2 text-black' type='text' value={search} onChange={(e) => {setSearch(e.target.value)}} placeholder='0000000' />
+    <input className=' rounded-xl pl-3 text-start mr-2 text-black w-48' type='text' value={search} onChange={(e) => {setSearch(e.target.value)}} placeholder='Find By ID' />
 
-    <button className='text-white' type='submit'>Find</button>
+    <button className='text-white hover:text-gray-300 ' type='submit'>Find</button>
 
     
     </form>

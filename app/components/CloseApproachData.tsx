@@ -19,7 +19,7 @@ export default  function CloseApproachData({close_approach_date_full, orbiting_b
   const rvKPH = Number(relative_velocity.kilometers_per_hour).toFixed()
 
   
-  console.log( )
+  //console.log( )
   //console.log(miss_distance.miles)
     return (
       <>

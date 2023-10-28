@@ -19,7 +19,7 @@ export default async function AsteroidPage({params: {asteroidId}}: Params) {
     <>
      <h2 className='text-3xl text-center mt-4 text-white font-bold '>Asteroid Specific</h2>
     
-    <div className='p-8  mb-4'>
+    <div className='p-4  mb-4'>
     <SingleRock {...asteroid} />
 
     </div>
