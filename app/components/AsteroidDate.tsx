@@ -24,7 +24,8 @@ export default function AstroidDate() {
         if(!start_date || !formatISO(start_date)) return 
 
         const dateISO = formatISO(start_date)
-        const endDateISO = formatISO(addDays(start_date, 7))
+        
+        const endDateISO = formatISO(addDays(start_date, 1))
         console.log(dateISO.slice(0, dateISO.indexOf('T')))
         const slicedStartDate = dateISO.slice(0, dateISO.indexOf('T'))
         const slicedEndDate = endDateISO.slice(0, endDateISO.indexOf('T'))
@@ -58,13 +59,13 @@ export default function AstroidDate() {
     }, [start_date])
 
   return (
-    <form className=' rounded-lg text-xs  md:text-lg mt-4' onSubmit={handleSubmit}>
+    <form className=' rounded-lg text-xs  md:text-lg ' onSubmit={handleSubmit}>
 
     {/* <p className='text-white text-sm text-center'>Only a week timeframe</p> */}
 
     <div className='flex gap-2'>
       
-      <div className=' flex justify-center    '>
+      <div className='flex justify-center'>
 
     {/* <input name='start_date' id='start_date' className=' rounded-xl text-center  ' type='date' value={start_date} onChange={(e) => {setStart_date(e.target.value)}} /> */}
     {/* <input name='start_date' id='start_date' className=' rounded-xl text-center  ' type='date' value={start_date} onChange={(e) => {
@@ -73,7 +74,7 @@ export default function AstroidDate() {
       <DatePicker selected={start_date} onSelect={() => {}} dateFormat={'yyyy/MM/dd'} onChange={(date) => {
         if (!date) return
         setStart_date(date)
-      }} allowSameDay={true}  locale={'en'} className='pl-1 w-48 rounded-xl text-center' calendarClassName='' monthsShown={1} popperClassName='absolute ' placeholderText={'Find By Date'}  />
+      }} allowSameDay={true}  locale={'en'} className='pl-3 w-48 rounded-xl text-start' calendarClassName='' monthsShown={1} popperClassName='absolute ' placeholderText={'Find By Date'}  />
 
     {/* <input className=' rounded-xl text-center  ' type='date' value={end_date} onChange={(e) => {setEnd_Date(e.target.value)}} />
        */}

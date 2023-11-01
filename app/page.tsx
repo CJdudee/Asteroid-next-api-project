@@ -1,6 +1,7 @@
 import getAllAsteroid from '@/lib/getAllAsteroid'
 import Image from 'next/image'
 import RockObject from './components/RockObject'
+import HomePageTab from './components/HomePageTab'
 
 export default async function Home() {
   const allRocks = await getAllAsteroid()
@@ -13,15 +14,7 @@ export default async function Home() {
   
 return (
   <>
-    <div className="p-4  mb-4  ">
-        <ul className=" 2xl:grid grid-cols-2 gap-3 ">
-            {allRocks.near_earth_objects.map((rock: any) => (
-                
-                <RockObject key={rock.id} {...rock} rock={rock} />
-                
-            ))}
-        </ul>
-    </div>
+   <HomePageTab near_earth_objects={allRocks.near_earth_objects} />
   </>
 )
 }

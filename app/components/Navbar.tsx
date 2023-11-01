@@ -17,7 +17,7 @@ export default function Navbar() {
 
     return (
         
-        <nav className=' bg-blue-800  pt-2 pl-2 md:p-0 sticky  '>
+        <nav className=' bg-blue-800  pt-2 pl-2 md:p-0   sticky   '>
             <div className={`block min-[768px]:hidden `}>
                 <button className={` ${open ? ' absolute' : ''} hover:text-gray-300`} onClick={() => {setOpen(!open)}}>
 
@@ -25,8 +25,8 @@ export default function Navbar() {
                 </button>
 
                 {open && (
-                    <div className='w-full h-full flex justify-evenly flex-col pb-2 '>
-                        <div className='text-center'>
+                    <div className='w-full h-full flex justify-evenly flex-col gap-2 pb-2 '>
+                        <div className='text-center '>
                         <AstroidSearch />
                     </div>
                     <div className='flex justify-center'>
@@ -38,19 +38,19 @@ export default function Navbar() {
 
             </div>
 
-            <div className='hidden md:flex justify-evenly pb-2  gap-1'>
+            <div className='hidden md:flex justify-evenly   gap-1 py-2 place-items-center'>
 
-                <h1 className='hidden text-3xl font-bold mt-3  text-white lg:grid place-content-center '>
+                <h1 className='hidden text-3xl font-bold   text-white lg:grid place-content-center '>
                     <Link className='hover:text-gray-300' href='/'>RockOClock</Link>
                 </h1>
 
 
-                <div className='text-center  '>
+                <div className='text-center     '>
                     <AstroidSearch />
                     
                 </div>
 
-                <div className='text-center '>
+                <div className='text-center  '>
                     <AstroidDate />
                     
                 </div>

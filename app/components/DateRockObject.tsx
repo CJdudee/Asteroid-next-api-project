@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import CloseApproachData from './CloseApproachData'
 import Link from 'next/link'
@@ -5,7 +6,7 @@ import Link from 'next/link'
 
 //these components are slightly different cause the api sends different data 
 
-export default async function DateRockObject({rock, id, is_potentially_hazardous_asteroid, name, nasa_jpl_url, close_approach_data, links, estimated_diameter }: {
+export default  function DateRockObject({rock, id, is_potentially_hazardous_asteroid, name, nasa_jpl_url, close_approach_data, links, estimated_diameter }: {
     rock: object
     id: number
     is_potentially_hazardous_asteroid: boolean
@@ -32,7 +33,7 @@ export default async function DateRockObject({rock, id, is_potentially_hazardous
   return (
     <div className='w-full text-center bg-gray-200 gap-4 text-lg  p-6 rounded-xl border border-orange-500 border-x-2 border-y-2 mb-2'>
 
-        <div className='inline-flex pb-4'>
+        <div className='inline-flex '>
 
         <h2 className=' underline text-purple-800 text-3xl p-3'>Name: {name}</h2>
 
@@ -40,8 +41,8 @@ export default async function DateRockObject({rock, id, is_potentially_hazardous
        
         </div>
 
-        {is_potentially_hazardous_asteroid ? (<p className='text-2xl mb-4'>This asteroid is Potentially Dangerous</p>) : (
-          <p className='text-2xl m-4'>This asteroid is not dangerous</p>
+        {is_potentially_hazardous_asteroid ? (<p className='text-2xl mb-2'>This asteroid is Potentially Dangerous</p>) : (
+          <p className='text-2xl mb-2'>This asteroid is not dangerous</p>
           )}
         
         <div className='outline outline-1 rounded-sm mb-4 mr-4 ml-4 p-1'>

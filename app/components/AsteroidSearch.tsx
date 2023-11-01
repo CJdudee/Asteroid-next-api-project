@@ -16,7 +16,7 @@ export default function AstroidSearch() {
     }
 
   return (
-    <form className=' rounded-lg  text-xs md:text-lg items-center mt-4   ' onSubmit={handleSubmit}>
+    <form className=' rounded-lg  text-xs md:text-lg items-center    ' onSubmit={handleSubmit}>
 
     {/* <p className='text-white text-center text-sm    '>Find by ID</p> */}
 

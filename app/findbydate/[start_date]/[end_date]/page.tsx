@@ -4,6 +4,7 @@ import RockObject from '@/app/components/RockObject'
 import getAsteroidByDate from '@/lib/getAsteroidByDate'
 import flatDateArray from '@/lib/flatDateArray'
 import DateRockObject from '@/app/components/DateRockObject'
+import DateRockTab from '@/app/components/DateRockTab'
 
 type Params = {
     params: {
@@ -35,19 +36,7 @@ export default async function AsteroidPage({params: {start_date, end_date}}: Par
   return (
     <>
 
-    <h2 className='text-3xl text-center mt-4 text-white font-bold'>Asteriods from {start_date} to {end_date}</h2>
-    
-        <div className="p-8 mb-4 ">
-            <ul className='xl:grid grid-cols-2  gap-3'>
-
-            {flatArray.map((r: any) => {
-                return (
-                    <DateRockObject {...r} rock={r} />
-                    )
-                })}
-            
-                </ul>
-        </div>
+    <DateRockTab flatArray={flatArray} start_date={start_date} end_date={end_date} />
     
     </>
   )
