@@ -12,8 +12,10 @@ module.exports = {
         
         infoCardColor: '#C197D2',
         Boxes: '#BF94E4',
-        Navbar: '#211522',
+        Navbar: '#3B185F',
         Bg: '#613659',
+        Layout: '#160040',
+
 
 
         lightBrown: '#C4A484',

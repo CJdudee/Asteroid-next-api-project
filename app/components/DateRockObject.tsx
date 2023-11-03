@@ -19,33 +19,27 @@ export default  function DateRockObject({rock, id, is_potentially_hazardous_aste
 }) {
 
   
-
- // console.log(estimated_diameter)
-  //console.log(destructCloseApproach)
-  // console.log(CloseApproachData)
-  // console.log(nasa_jpl_url)
-  // console.log(links)
-  //console.log(rock)
-  // const close_approach_date = close_approach_data.close_approach_date
-  // const close_approach_date = close_approach_data.close_approach_date
-  //console.log(orbital_data.orbit_class)
-  
   return (
-    <div className='w-full text-center bg-gray-200 gap-4 text-lg  p-6 rounded-xl border border-orange-500 border-x-2 border-y-2 mb-2'>
+    <div className=' mx-auto mb-2 p-5 text-center w-full  text-lg bg-gray-200  border border-red-500 border-x-2 border-y-2  rounded-xl   max-w-4xl'>
 
-        <div className='inline-flex '>
+      <div className='inline-flex '>
 
         <h2 className=' underline text-purple-800 text-3xl p-3'>Name: {name}</h2>
 
         <Link className='text-2xl hover:text-orange-400' href={`/rocktheone/${id}`}>ID: {id}</Link>
-       
-        </div>
+  
+      </div>
 
-        {is_potentially_hazardous_asteroid ? (<p className='text-2xl mb-2'>This asteroid is Potentially Dangerous</p>) : (
-          <p className='text-2xl mb-2'>This asteroid is not dangerous</p>
-          )}
-        
-        <div className='outline outline-1 rounded-sm mb-4 mr-4 ml-4 p-1'>
+      {is_potentially_hazardous_asteroid ? 
+      (
+      <p className='text-2xl mb-2 font-semibold'>This asteroid is Potentially Dangerous</p>
+      ) 
+      : 
+      (
+        <p className='text-2xl mb-2 font-semibold'>This asteroid is not dangerous</p>
+      )}
+      {/* start of EST Diameter */}
+      <div className='outline outline-1 rounded-sm mb-4 mr-4 ml-4 p-1'>
 
         
 
@@ -55,53 +49,37 @@ export default  function DateRockObject({rock, id, is_potentially_hazardous_aste
 
           <div className='pb-4'>
 
-          <h1 className='text-2xl  font-semibold '>Miles</h1>
-        <p className='text-xl  font-semibold'>min size: {estimated_diameter.miles.estimated_diameter_min}</p>
-        <p className='text-xl  font-semibold'>max size: {estimated_diameter.miles.estimated_diameter_max}</p>
+            <h1 className='text-2xl  font-semibold '>Miles</h1>
+            <p className='text-xl  font-semibold'>min size: {estimated_diameter.miles.estimated_diameter_min}</p>
+            <p className='text-xl  font-semibold'>max size: {estimated_diameter.miles.estimated_diameter_max}</p>
 
           </div>
 
           <div className='pb-4'>
 
-        <h1 className='text-2xl  font-semibold'>Kilometers</h1>
-        <p className='text-xl  font-semibold'>min size: {estimated_diameter.kilometers.estimated_diameter_min}</p>
-        <p className='text-xl  font-semibold'>max size: {estimated_diameter.kilometers.estimated_diameter_max}</p>
+            <h1 className='text-2xl  font-semibold'>Kilometers</h1>
+            <p className='text-xl  font-semibold'>min size: {estimated_diameter.kilometers.estimated_diameter_min}</p>
+            <p className='text-xl  font-semibold'>max size: {estimated_diameter.kilometers.estimated_diameter_max}</p>
 
           </div>
 
         </div>
-          </div>
+        {/* end of EST Diameter */}
+
+      </div>
         
 
-        <div className=''>
+      <div className=''>
 
 
         <ul className='grid grid-cols-1  rounded-lg mb-3 mt-3'>
           
           {close_approach_data.map((close: any) => (
-            // <div className='outline outline-2 outline-purple-300 p-3 '>
-            // <p className='inline-block p-4 text-center'>  {close.close_approach_date_full} :  </p>
-            // <p className='inline-block  text-center'> | orbiting : {close.orbiting_body} | </p>
-            // <p>Missed by: </p>
-            // <p>miles: {close.miss_distance.miles}</p>
-            // <p>kilometers: {close.miss_distance.kilometers}</p>
-            // <p>Traveling at:</p>
-            // <p>MPH: {close.relative_velocity.miles_per_hour}</p>
-            // <p>KPH: {close.relative_velocity.kilometers_per_hour}</p>
-            // </div>
-            
             <CloseApproachData {...close} key={id} />
             ))}
         </ul>
 
-            </div>
-        {/* {close_approach_data.slice(5, 10).map((close: any) => (
-          <CloseApproachData {...close} key={id} />
-        ))} */}
-        
-        
-        
-        
+      </div>
         
     </div>
   )

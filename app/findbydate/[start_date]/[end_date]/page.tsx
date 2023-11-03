@@ -23,16 +23,9 @@ export default async function AsteroidPage({params: {start_date, end_date}}: Par
     //console.log(asteroidByDate)
 
     
-    
-
-    
     const flatArray = flatDateArray(asteroidByDate.near_earth_objects)
-
     
 
-    
-    //console.log(flatArray.slice(0, 5))
-    // console.log(asteroidByDate.near_earth_objects)
   return (
     <>
 

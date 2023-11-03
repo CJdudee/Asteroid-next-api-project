@@ -1,5 +1,6 @@
 'use client'
 
+import { numberWithCommas } from '@/util/helpers'
 import React from 'react'
 
 export default  function CloseApproachData({close_approach_date_full, orbiting_body, miss_distance, relative_velocity}: {
@@ -19,29 +20,26 @@ export default  function CloseApproachData({close_approach_date_full, orbiting_b
   const rvKPH = Number(relative_velocity.kilometers_per_hour).toFixed()
 
   
-  //console.log( )
-  //console.log(miss_distance.miles)
+  
     return (
       <>
         
         <div className='p-4 outline outline-1  rounded-lg bg-gray-300  m-2 '>
           
-        <p className=' text-xl font-bold'> Approach Date: </p>
-        <div className='block mb-2'>
+          <p className=' text-xl font-bold'> Approach Date: </p>
 
+          <div className='block mb-2'>
+            <p className='inline-flex mr-4 font-semibold '>   {close_approach_date_full}   </p>
+            <p className='inline-flex font-semibold'> Orbiting : {orbiting_body}  </p>
+          </div>
 
-          <p className='inline-flex mr-4 font-semibold '>   {close_approach_date_full}   </p>
-          <p className='inline-flex font-semibold'> orbiting : {orbiting_body}  </p>
-        </div>
-
-          
           <h2 className=' text-xl font-bold '>MISS DISTANCE:</h2>
           
           <div className='block mb-2'>
 
 
-          <p className='inline-flex text-lg mr-4 font-semibold'>miles: {mdMiles}</p>
-          <p className='inline-flex text-lg font-semibold'>kilometers: {mdKilometers}</p>
+            <p className='inline-flex text-lg mr-4 font-semibold'>miles: {numberWithCommas(mdMiles)}</p>
+            <p className='inline-flex text-lg font-semibold'>kilometers: {numberWithCommas(mdKilometers)}</p>
 
           </div>
 
@@ -50,16 +48,12 @@ export default  function CloseApproachData({close_approach_date_full, orbiting_b
           <div className='block mb-2'>
 
 
-          <p className='inline-flex mr-4 text-lg font-semibold'>MPH: {rvMPH}</p>
-          <p className='inline-flex text-lg font-semibold'>KPH: {rvKPH}</p>
+            <p className='inline-flex mr-4 text-lg font-semibold'>MPH: {numberWithCommas(rvMPH)}</p>
+            <p className='inline-flex text-lg font-semibold'>KPH: {numberWithCommas(rvKPH)}</p>
 
           </div>
 
         </div>
-       
-          
-          
-          
       </>
   )
 }

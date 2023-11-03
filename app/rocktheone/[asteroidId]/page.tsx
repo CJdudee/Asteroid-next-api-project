@@ -12,17 +12,15 @@ type Params = {
 export default async function AsteroidPage({params: {asteroidId}}: Params) {
 
     const asteroidData = getAsteroId(asteroidId)
-
     const asteroid = await asteroidData
-    console.log(asteroid)
+
   return (
     <>
-     <h2 className='text-3xl text-center mt-4 text-white font-bold '>Asteroid Specific</h2>
+      <h2 className='text-3xl text-center mt-4 text-white font-bold '>Asteroid Specific</h2>
     
-    <div className='p-4  mb-4'>
-    <SingleRock {...asteroid} />
-
-    </div>
+      <div className='p-4  mb-4'>
+        <SingleRock {...asteroid} />
+      </div>
     </>
   )
 }
