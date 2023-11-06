@@ -12,7 +12,7 @@ export default async function AsteroidPage({params: {asteroidId}}: Params) {
     const asteroidData = getAsteroId(asteroidId)
     const asteroid = await asteroidData
 
-    if(!asteroid.length) return <p className='flex justify-center w-full mt-6 text-white font-bold text-xl '>No Asteroid was found </p>
+    if(!asteroid) return <p className='flex justify-center w-full mt-6 text-white font-bold text-xl '>No Asteroid was found </p>
 
   return (
     <>
