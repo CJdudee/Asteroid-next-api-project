@@ -25,3 +25,11 @@ export const selectStyles = {
 
 }
 
+export const randomFacts = [
+    "Asteroids orbits are changed by Jupiter, Mars, and any close encounters with other objects ",
+    "Scientists continuously monitor Earth-crossing asteroid",
+    "Ceres was the first Asteroid to be discovered. That was 1801",
+    "Most asteroid in the solar system are found in the asteroid belt",
+    "spectroscopic analysis gives us the ability to get clues about asteroids composition and properties",
+    "When an asteroid is first discovered, it is then observed for months/years so that its orbit can be calculated",
+]

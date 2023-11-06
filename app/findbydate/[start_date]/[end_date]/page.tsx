@@ -1,10 +1,6 @@
-import React from 'react'
-import getAsteroId from '@/lib/getAsteroid'
-import RockObject from '@/app/components/RockObject'
-import getAsteroidByDate from '@/lib/getAsteroidByDate'
-import flatDateArray from '@/lib/flatDateArray'
-import DateRockObject from '@/app/components/DateRockObject'
 import DateRockTab from '@/app/components/DateRockTab'
+import flatDateArray from '@/lib/flatDateArray'
+import getAsteroidByDate from '@/lib/getAsteroidByDate'
 
 type Params = {
     params: {

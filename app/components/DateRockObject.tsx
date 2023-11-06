@@ -20,7 +20,7 @@ export default  function DateRockObject({rock, id, is_potentially_hazardous_aste
 
   
   return (
-    <div className=' mx-auto mb-2 p-5 text-center w-full  text-lg bg-gray-200  border border-red-500 border-x-2 border-y-2  rounded-xl   max-w-4xl'>
+    <div className=' mx-auto mb-2 p-5 text-center w-full text-lg bg-gray-200 border border-red-500 border-x-2 border-y-2 rounded-xl max-w-4xl'>
 
       <div className='inline-flex '>
 
@@ -31,19 +31,13 @@ export default  function DateRockObject({rock, id, is_potentially_hazardous_aste
       </div>
 
       {is_potentially_hazardous_asteroid ? 
-      (
-      <p className='text-2xl mb-2 font-semibold'>This asteroid is Potentially Dangerous</p>
-      ) 
+      (<p className='text-2xl mb-2 font-semibold'>This asteroid is Potentially Dangerous</p>) 
       : 
-      (
-        <p className='text-2xl mb-2 font-semibold'>This asteroid is not dangerous</p>
-      )}
+      (<p className='text-2xl mb-2 font-semibold'>This asteroid is not dangerous</p>)}
       {/* start of EST Diameter */}
-      <div className='outline outline-1 rounded-sm mb-4 mr-4 ml-4 p-1'>
+      <div className='outline outline-1 rounded mb-4 mx-2 p-1'>
 
-        
-
-        <p className='text-2xl mr-4 mb-4'>Estimated Diameter</p>
+        <p className='text-2xl mb-2'>Estimated Diameter</p>
 
         <div className='md:grid grid-cols-2'>
 
@@ -68,11 +62,9 @@ export default  function DateRockObject({rock, id, is_potentially_hazardous_aste
 
       </div>
         
-
       <div className=''>
 
-
-        <ul className='grid grid-cols-1  rounded-lg mb-3 mt-3'>
+        <ul className='grid grid-cols-1 rounded'>
           
           {close_approach_data.map((close: any) => (
             <CloseApproachData {...close} key={id} />

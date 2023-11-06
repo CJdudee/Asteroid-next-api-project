@@ -20,8 +20,6 @@ export default async function SingleRock({ rock, id, is_potentially_hazardous_as
    // const close_approach_date = close_approach_data.close_approach_date
    //console.log(orbital_data.orbit_class)
   return (
-    
-   
     <div className='w-full text-center bg-gray-200 gap-4 text-lg p-6 rounded-xl  max-w-7xl mx-auto border border-orange-500 border-x-2 border-y-2 '>
 
       <div className='inline-flex  '>
@@ -33,40 +31,33 @@ export default async function SingleRock({ rock, id, is_potentially_hazardous_as
       </div>
 
       {is_potentially_hazardous_asteroid ? 
-        (<p className='text-2xl mb-2 font-semibold'>This asteroid is Potentially Dangerous</p>) 
-        : (
-        <p className='text-2xl mb-2 font-semibold'>This asteroid is not dangerous</p>
-        )}
-       
+      (<p className='text-2xl mb-2 font-semibold'>This asteroid is Potentially Dangerous</p>) 
+      : 
+      (<p className='text-2xl mb-2 font-semibold'>This asteroid is not dangerous</p>)}
+
         {/*  div containing Details section and Est Diameter */}
       <div className=''>
 
         
-        <div className='outline outline-1 rounded-lg mb-4 mx-3 p-1'>
+      <div className='outline outline-1 rounded-lg mb-4 mx-3 p-1'>
 
+        <h2 className=' text-2xl font-bold'>Details:</h2>
 
-          <h2 className=' text-2xl font-bold'>Details:</h2>
+        <div className='md:grid grid-rows-2 mb-2  w-full  gap-2 pb-2  '>
 
-       
-          <div className='md:grid grid-rows-2   mb-4  w-full  gap-2 pb-2  '>
-
-      
-      
-            <div className='md:grid grid-cols-2 w-full'>
-              <p className='text-xl font-semibold'>First observation: {orbital_data.first_observation_date}</p>
-              <p className='text-xl font-semibold'>Last observation: {orbital_data.last_observation_date}</p>
-            </div>
-
-            <p className='text-xl font-semibold'>orbit uncertainty: {orbital_data.orbit_uncertainty}</p>
-          
+          <div className='md:grid grid-cols-2 w-full'>
+            <p className='text-xl font-semibold'>First observation: {orbital_data.first_observation_date}</p>
+            <p className='text-xl font-semibold'>Last observation: {orbital_data.last_observation_date}</p>
           </div>
+
+          <p className='text-xl font-semibold'>orbit uncertainty: {orbital_data.orbit_uncertainty}</p>
+        
+        </div>
 
       </div>
 
-
-      <div className='outline outline-1 rounded-lg mr-3 ml-3 p-1'>
-
-
+      {/* Est Diameter */}
+      <div className='outline outline-1 rounded-lg mx-3 p-1'>
 
         <h2 className='text-2xl mr-4 mb-4 font-bold'>Estimated Diameter:</h2>
 
@@ -95,15 +86,11 @@ export default async function SingleRock({ rock, id, is_potentially_hazardous_as
         </div>
 
       </div>
+      {/* end of EST diameter */}
 
       </div>
 
-
-
-        
-
       <div className='p-1'>
-
 
         <ul className='grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 grid-flow-row   rounded-lg mb-3 mt-3'>
           {close_approach_data.map((close: any) => (

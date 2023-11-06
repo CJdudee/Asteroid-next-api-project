@@ -21,7 +21,7 @@ export default function Navbar() {
 
             <div className={`block min-[768px]:hidden `}>
 
-                <button className={` ${open ? ' absolute' : ''} hover:text-gray-300`} 
+                <button className={` ${open ? ' absolute' : ''} hover:text-gray-300 text-gray-400`} 
                 onClick={() => {setOpen(!open)}}>
 
                 <RxHamburgerMenu className={` w-9 h-9 `}/>

@@ -65,7 +65,7 @@ export default  function RockObject({rock, id, is_potentially_hazardous_asteroid
     
         <p className=' text-2xl font-bold mb-2'>Details: </p>
 
-        <div className='md:grid grid-rows-2   mb-4  w-full  gap-2 pb-2  '>
+        <div className='md:grid grid-rows-2 mb-2  w-full  gap-2 pb-2  '>
 
       
       
@@ -86,7 +86,7 @@ export default  function RockObject({rock, id, is_potentially_hazardous_asteroid
 
 
           
-      <div className='outline outline-1 rounded-sm mr-3 ml-3 p-1'>
+      <div className='outline outline-1 rounded-sm mx-3 p-1'>
 
 
         <p className='text-2xl  mb-2 font-bold'>Estimated Diameter: </p>

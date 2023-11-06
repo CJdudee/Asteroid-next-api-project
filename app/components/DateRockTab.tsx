@@ -1,14 +1,9 @@
 'use client'
 
-import { useSearchParams } from 'next/navigation'
-import React, { SetStateAction, useEffect, useRef, useState } from 'react'
-import DateRockObject from './DateRockObject'
-import Link from 'next/link'
-import Select from 'react-select'
-import {BiDownArrowAlt} from 'react-icons/bi'
-import { selectStyles } from '@/util/config'
-import AsteroidFilter from './AsteroidFilter'
 import { filteredAsteroids } from '@/util/helpers'
+import { useState } from 'react'
+import AsteroidFilter from './AsteroidFilter'
+import DateRockObject from './DateRockObject'
 
 const initialInput = {
     danger: null, 
@@ -23,90 +18,32 @@ type FilterType = {
 
 }
 
-const options = [
-    {value: true, label: 'Show Dangerous Asteroid'},
-    {value: false, label: 'Show Safe Asteroid'},
-    {value: null, label: 'Show All Asteroid'}
-]
 
 export default function DateRockTab({ flatArray, start_date, end_date }:any) {
-
-    // const [ filter, setFilter ] = useState<Boolean | null>()
     const [ filter, setFilter ] = useState(initialInput)
 
     const [openFilter, setOpenFilter ] = useState(false)
 
-    const filterRef = useRef<HTMLDivElement>(null); 
-
-
-    useEffect(() => {
-        const handler = (e: any) => {
-  
-            if (!filterRef || !filterRef.current || !filterRef.current.contains(e.target)) {
-            setOpenFilter(false)
-            }
-  
-        }
-        
-        document.addEventListener('mousedown', handler )
-  
-        return () => {
-          document.removeEventListener('mousedown', handler)
-        }
-  
-  
-      })
-
-    
-    
-    // const flatEarthOBJ = flatArray.filter((earthObj: any) => {
-    //     if (!filter || !filter.danger && !filter.min && !filter.max === null) return earthObj
-
-    //     let isAllowed = []
-        
-    //     // if(filter.danger)
-    //     //console.log(earthObj.is_potentially_hazardous_asteroid)
-    //     if (filter.danger || filter.danger != null) {
-    //         isAllowed.push(earthObj.is_potentially_hazardous_asteroid === filter.danger)
-    //     }
-
-    //     if (filter.min || filter.min != null) {
-    //         isAllowed.push(earthObj.estimated_diameter.miles.estimated_diameter_max >= filter.min)
-    //     }
-    //     //console.log(typeof filter.max)
-    //     if (filter.max || filter.max != undefined && filter.max != '') {
-    //         isAllowed.push(earthObj.estimated_diameter.miles.estimated_diameter_max <= filter.max)
-    //     }
-    //     //console.log(earthObj.is_potentially_hazardous_asteroid === filter)
-    //     // return earthObj.is_potentially_hazardous_asteroid === filter
-    //     if(isAllowed.includes(false)) return false
-    //     return true
-    //     // return earthObj.is_potentially_hazardous_asteroid == search
-    // })
-
     const flatEarthOBJ = filteredAsteroids(flatArray, filter)
-    
 
     return (
     <div className='p-2  mb-4'>
 
-    <h2 className='text-3xl text-center  mb-4 text-white font-bold'>Asteriods from {start_date} to {end_date}</h2>
+        <h2 className='text-3xl text-center  mb-4 text-white font-bold'>
+            Asteriods from {start_date} to {end_date}
+        </h2>
 
         <AsteroidFilter filter={filter} setFilter={setFilter} openFilter={openFilter} setOpenFilter={setOpenFilter} />
         
+        <ul className='xl:grid grid-cols-2 gap-3'>
 
-
-
+        {flatEarthOBJ.map((r: any) => {
+            return (
+                <DateRockObject key={r.id} {...r} rock={r} />
+                )
+            })}
         
-            <ul className='xl:grid grid-cols-2  gap-3'>
-
-            {flatEarthOBJ.map((r: any) => {
-                return (
-                    <DateRockObject {...r} rock={r} />
-                    )
-                })}
-            
-            </ul>
+        </ul>
         
     
     </div>
