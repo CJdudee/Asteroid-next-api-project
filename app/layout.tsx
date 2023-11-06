@@ -5,6 +5,8 @@ import Navbar from './components/Navbar'
 
 const inter = Inter({ subsets: ['latin'] })
 
+import { Analytics } from '@vercel/analytics/react'
+
 export const metadata: Metadata = {
   title: 'RockOClock',
   description: 'Using nasa api to display past and future rocks passing',
@@ -21,7 +23,8 @@ export default function RootLayout({
       <body className='bg-Layout'>
         <Navbar />
         {children}
-        </body>
+        <Analytics />
+      </body>
     </html>
   )
 }
