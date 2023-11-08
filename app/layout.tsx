@@ -22,7 +22,7 @@ export default function RootLayout({
       {/* <body className='bg-gradient-to-l from-slate-900 to-slate-900'> */}
       <body className='bg-Layout'>
         <Navbar />
-        {children}
+          {children}
         <Analytics />
       </body>
     </html>
