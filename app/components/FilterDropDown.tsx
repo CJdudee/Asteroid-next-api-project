@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function FilterDropDown({filter, setFilter}: any) {
   return (
-    <div className='  absolute top-32  h-48 w-56 max-w-4xl  -right-20 sm:-right-60 left-1/4 mx-auto flex flex-col gap-6  bg-red-900  rounded px-2 py-10 text-sm shadow-xl  ' >
+    <div className='absolute h-48 w-56 max-w-4xl top-10 sm:top-12 right-4  mx-auto flex flex-col gap-6 bg-red-900 rounded px-2 py-10 text-sm shadow-xl' >
 
         <div>
             <p className='text-center text-white font-bold'>Set Min Size: Mi</p>
