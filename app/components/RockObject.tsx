@@ -114,36 +114,34 @@ export default function RockObject({
   );
 
   return (
-    <div className=" mx-auto mb-2 p-5 text-center w-full text-lg bg-gray-200  border border-red-500 border-x-2 border-y-2 rounded-2xl  max-w-4xl ">
-      <div className="inline-flex ">
-        <h2 className=" underline text-purple-800 text-2xl sm:text-3xl p-3">
-          Name: {name_limited}
+    <div className=" mx-auto mb-2 p-5 text-center w-full text-lg bg-gray-200  border border-red-500 border-x-2 border-y-2 rounded-2xl  max-w-4xl relative ">
+      <div className="inline-flex gap-1 ">
+        <h2 className=" underline text-purple-800 text-2xl sm:text-3xl  p-3  font-serif">
+          {name_limited}
         </h2>
 
         <Link
-          className=" text-lg sm:text-2xl  text-end hover:text-orange-400"
+          className=" text-lg sm:text-2xl   text-end hover:text-red-600 font-semibold"
           href={`/rocktheone/${id}`}
         >
           ID: {id}
         </Link>
       </div>
 
-      {is_potentially_hazardous_asteroid ? (
-        <p className=" text-xl sm:text-2xl mb-2 font-semibold">
-          This asteroid is Potentially Dangerous
-        </p>
-      ) : (
-        <p className="text-xl sm:text-2xl mb-2 font-semibold ">
-          This asteroid is not dangerous
-        </p>
-      )}
+      <div className="text-xl sm:text-2xl mb-2  font-bold mt-2">
+        {is_potentially_hazardous_asteroid ? (
+          <p className=" ">This asteroid is Potentially Dangerous</p>
+        ) : (
+          <p className=" ">This asteroid is Not Dangerous</p>
+        )}
+      </div>
 
       <div className={` transition-all ${showInfo ? "block" : "hidden"}`}>
-        <div className="outline outline-1 rounded-sm mb-4 mr-3 ml-3 p-1">
+        <div className="outline outline-1 rounded-2xl mb-4 mx-3 p-1">
           {detailsJsx}
         </div>
 
-        <div className="outline outline-1 rounded-sm mx-3 p-1">{estJsx}</div>
+        <div className="outline outline-1 rounded-2xl mx-3 p-1">{estJsx}</div>
 
         <div className="">
           {/* <ul className="grid grid-cols-1 md:grid-cols-2   rounded-lg mb-3 mt-3 p-1 gap-2">
@@ -156,7 +154,7 @@ export default function RockObject({
           </div>
 
           <button
-            className=" hover:text-gray-400"
+            className=" hover:text-gray-400 font-semibold outline outline-1 px-2 py-1 rounded-xl transition-colors duration-300"
             type="button"
             onClick={() => setShowApproach(!showApproach)}
           >
@@ -176,10 +174,12 @@ export default function RockObject({
         
       </div> */}
       <div className="h-full w-full">
-        <div className={` transition-all relative  ${showInfo ? "" : ""} `}>
+        <div className={` transition-all  ${showInfo ? "" : ""} `}>
           <button
-            className={` transition-all duration-500 text-xl font-bold  absolute ${
-              showInfo ? " right-0 -top-3 hover:text-slate-400 " : "-top-3 right-0 hover:text-white"
+            className={` transition-all duration-[200] text-xl font-bold  absolute ${
+              showInfo
+                ? " right-2 -top-0 hover:text-slate-400 rotate-180 "
+                : "-top-0 right-2 hover:text-white"
             }`}
             onClick={() => setShowInfo(!showInfo)}
           >

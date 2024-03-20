@@ -111,7 +111,7 @@ export default function AsteroidFilter({
         ref={filterRef}
         className={`${
           filter.min || filter.max ? " " : ""
-        } flex hover:text-gray-300 cursor-pointer sm:text-2xl h-9 sm:h-11 bg-red-800 pl-2 rounded-lg items-center text-sm relative`}
+        } flex hover:text-gray-300 cursor-pointer sm:text-2xl h-9 sm:h-11 bg-red-800 pl-2 rounded-lg items-center text-sm relative z-50  `}
       >
         <button
           className="flex items-center "
